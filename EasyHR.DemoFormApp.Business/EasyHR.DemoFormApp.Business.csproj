@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\" />
-    <Folder Include="Validation\" />
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EasyHR.DemoFormApp.DataAccess\EasyHR.DemoFormApp.DataAccess.csproj" />
     <ProjectReference Include="..\EasyHR.DemoFormApp.Entities\EasyHR.DemoFormApp.Entities.csproj" />
+    <ProjectReference Include="..\EasyHR.DemoFormApp.Shared\EasyHR.DemoFormApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,8 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyHR.DemoFormApp.Business\EasyHR.DemoFormApp.Business.csproj" />
   </ItemGroup>
 
 </Project>
