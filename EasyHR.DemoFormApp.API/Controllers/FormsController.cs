@@ -17,7 +17,9 @@ namespace EasyHR.DemoFormApp.API.Controllers
         public async Task<IActionResult> Create([FromBody] FormCreateDto dto)
         {
             var result = await _formService.CreateForm(dto);
-            if (!result.Success) return BadRequest(result);
+            if (!result.Success)
+                return BadRequest(result);
+
             return Ok(result);
         }
 
@@ -28,11 +30,20 @@ namespace EasyHR.DemoFormApp.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("deleted")]
+        public async Task<IActionResult> GetAllDeleted()
+        {
+            var result = await _formService.GetAllDeletedForms();
+            return Ok(result);
+        }
+
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetById(Guid id)
         {
             var result = await _formService.GetFormById(id);
-            if (!result.Success) return NotFound(result);
+            if (!result.Success)
+                return NotFound(result);
+
             return Ok(result);
         }
 
@@ -40,16 +51,24 @@ namespace EasyHR.DemoFormApp.API.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
             var result = await _formService.GetFormById(id);
-            if (result.Data!.IsDeleted)
+
+            if (!result.Success || result.Data == null)
+                return NotFound(result);
+
+            if (result.Data.IsDeleted)
             {
-                await _formService.HardDeleteForm(id);
-                if (!result.Success) return NotFound(result);
-                return Ok(result);
+                var hardDeleteResult = await _formService.HardDeleteForm(id);
+                if (!hardDeleteResult.Success)
+                    return BadRequest(hardDeleteResult);
+
+                return Ok(hardDeleteResult);
             }
 
-            await _formService.SoftDeleteForm(id);
-            if (!result.Success) return NotFound(result);
-            return Ok(result);
+            var softDeleteResult = await _formService.SoftDeleteForm(id);
+            if (!softDeleteResult.Success)
+                return BadRequest(softDeleteResult);
+
+            return Ok(softDeleteResult);
         }
     }
 }

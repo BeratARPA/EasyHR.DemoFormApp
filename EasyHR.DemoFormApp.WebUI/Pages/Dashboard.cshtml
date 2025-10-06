@@ -1,0 +1,87 @@
+﻿@page
+@model DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_AdminLayout";
+}
+
+<div class="bg-white rounded-3 shadow-sm p-4 mb-4">
+    <h2 class="mb-1"><i class="bi bi-speedometer2"></i> Dashboard</h2>
+    <p class="text-muted mb-0">Form yönetim sistemi genel bakış</p>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Toplam Form</h6>
+                        <h2 class="mb-0 fw-bold">@Model.TotalForms</h2>
+                    </div>
+                    <div class="display-4 text-primary">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Aktif Formlar</h6>
+                        <h2 class="mb-0 fw-bold text-success">@Model.ActiveForms</h2>
+                    </div>
+                    <div class="display-4 text-success">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted mb-2">Silinen Formlar</h6>
+                        <h2 class="mb-0 fw-bold text-danger">@Model.DeletedForms</h2>
+                    </div>
+                    <div class="display-4 text-danger">
+                        <i class="bi bi-trash"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <h5 class="mb-3"><i class="bi bi-lightning"></i> Hızlı Erişim</h5>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <a asp-page="/Forms" class="btn btn-outline-primary w-100 py-3">
+                    <i class="bi bi-eye d-block fs-3 mb-2"></i>
+                    Aktif Formları Görüntüle
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a asp-page="/DeletedForms" class="btn btn-outline-danger w-100 py-3">
+                    <i class="bi bi-trash d-block fs-3 mb-2"></i>
+                    Silinen Formları Görüntüle
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a asp-page="/CreateForm" class="btn btn-outline-success w-100 py-3">
+                    <i class="bi bi-plus-circle d-block fs-3 mb-2"></i>
+                    Yeni Form Oluştur
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="text-center">      
+        <div class="bg-primary text-white rounded-3 p-5 shadow-lg">
+            <h1 class="display-3 fw-bold mb-4">EasyHR Form Yönetim Sistemi</h1>
+            <p class="lead mb-5">Modern ve kullanıcı dostu form yönetim platformu</p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a asp-page="/CreateForm" class="btn btn-light btn-lg px-5">
+                    <i class="bi bi-file-earmark-plus"></i> Form Gönder
+                </a>
+                <a asp-page="/Dashboard" class="btn btn-outline-light btn-lg px-5">
+                    <i class="bi bi-shield-lock"></i> Admin Girişi
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,7 +1,15 @@
+using EasyHR.DemoFormApp.WebUI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddHttpClient<FormApiService>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"] ?? "https://localhost:7001");
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
 
 var app = builder.Build();
 

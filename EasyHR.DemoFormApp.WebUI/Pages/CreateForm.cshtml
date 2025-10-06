@@ -1,0 +1,81 @@
+﻿@page
+@model CreateFormModel
+@{
+    ViewData["Title"] = "Form Oluştur";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="bi bi-file-earmark-plus"></i> Yeni Form Oluştur</h2>
+                </div>
+                <div class="card-body p-4">
+                    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <i class="bi bi-exclamation-triangle"></i> @Model.ErrorMessage
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+                    {
+                        <div class="alert alert-success alert-dismissible fade show">
+                            <i class="bi bi-check-circle"></i> @Model.SuccessMessage
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="FormData.Email" class="form-label fw-bold">
+                                <i class="bi bi-envelope"></i> Email
+                            </label>
+                            <input asp-for="FormData.Email" class="form-control form-control-lg" />
+                            <span asp-validation-for="FormData.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormData.FirstName" class="form-label fw-bold">
+                                <i class="bi bi-person"></i> Ad
+                            </label>
+                            <input asp-for="FormData.FirstName" class="form-control form-control-lg" />
+                            <span asp-validation-for="FormData.FirstName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormData.LastName" class="form-label fw-bold">
+                                <i class="bi bi-person"></i> Soyad
+                            </label>
+                            <input asp-for="FormData.LastName" class="form-control form-control-lg" />
+                            <span asp-validation-for="FormData.LastName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="FormData.BirthDate" class="form-label fw-bold">
+                                <i class="bi bi-calendar"></i> Doğum Tarihi
+                            </label>
+                            <input asp-for="FormData.BirthDate" type="date" class="form-control form-control-lg" />
+                            <span asp-validation-for="FormData.BirthDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-check-circle"></i> Formu Gönder
+                            </button>
+                            <a asp-page="/Index" class="btn btn-outline-secondary btn-lg">
+                                <i class="bi bi-x-circle"></i> İptal
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

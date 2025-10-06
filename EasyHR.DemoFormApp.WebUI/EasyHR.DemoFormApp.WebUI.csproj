@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Form\" />
-    <Folder Include="Pages\Home\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyHR.DemoFormApp.Entities\EasyHR.DemoFormApp.Entities.csproj" />
+    <ProjectReference Include="..\EasyHR.DemoFormApp.Shared\EasyHR.DemoFormApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>
