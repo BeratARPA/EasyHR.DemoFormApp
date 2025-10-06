@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyHR.DemoFormApp.API", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyHR.DemoFormApp.WebUI", "EasyHR.DemoFormApp.WebUI\EasyHR.DemoFormApp.WebUI.csproj", "{0C3E3E84-EC0A-4EA9-BEF8-E2995644715B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyHR.DemoFormApp.Shared", "EasyHR.DemoFormApp.Shared\EasyHR.DemoFormApp.Shared.csproj", "{4BD8AE25-A382-41BD-AE34-8FF735BBAF4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0C3E3E84-EC0A-4EA9-BEF8-E2995644715B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C3E3E84-EC0A-4EA9-BEF8-E2995644715B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C3E3E84-EC0A-4EA9-BEF8-E2995644715B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD8AE25-A382-41BD-AE34-8FF735BBAF4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD8AE25-A382-41BD-AE34-8FF735BBAF4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD8AE25-A382-41BD-AE34-8FF735BBAF4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD8AE25-A382-41BD-AE34-8FF735BBAF4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
