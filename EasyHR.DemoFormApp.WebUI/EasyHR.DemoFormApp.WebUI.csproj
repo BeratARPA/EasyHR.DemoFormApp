@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Form\" />
+    <Folder Include="Pages\Home\" />
+  </ItemGroup>
+
 </Project>
